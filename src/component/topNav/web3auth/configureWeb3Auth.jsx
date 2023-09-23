@@ -3,7 +3,6 @@ import { EthereumPrivateKeyProvider } from "@web3auth/ethereum-provider";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import { CHAIN_NAMESPACES } from "@web3auth/base";
 
-const clientId = "BODWZ6bS1HF4cxbj98vCyrqGNZbx2xh9tO4PC9kq7pV7p6mEkLWmA5VzCYYtt5okZ_5_xUzgbE26r1rhD9j_xLs"; // get from https://dashboard.web3auth.io
 
 const configureWeb3Auth = async () => {
 
@@ -18,7 +17,6 @@ const configureWeb3Auth = async () => {
   };
 
   const web3auth = new Web3AuthNoModal({
-    clientId: clientId,
     chainConfig: {
       chainNamespace: CHAIN_NAMESPACES.EIP155,
       chainId: "0x5",
