@@ -1,0 +1,95 @@
+{
+  "name": "linkrypto",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/react": "2.8.1",
+    "@cityofzion/neon-js": "5.5.1",
+    "@cityofzion/wallet-connect-sdk-wallet-react": "2.6.1",
+    "@headlessui/react": "1.7.17",
+    "@heroicons/react": "2.0.18",
+    "@json-rpc-tools/utils": "1.7.6",
+    "@kanalabs/kana-wallet-sdk": "0.2.0",
+    "@metamask/eth-sig-util": "6.0.0",
+    "@metamask/providers": "11.1.1",
+    "@simplewebauthn/browser": "8.0.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@turnkey/ethers": "0.17.1",
+    "@walletconnect/sign-client": "2.9.1",
+    "@walletconnect/types": "2.10.0",
+    "@walletconnect/web3wallet": "1.9.0",
+    "@web3auth/base-provider": "6.1.4",
+    "@web3auth/core": "4.6.0",
+    "@web3auth/ethereum-provider": "6.1.4",
+    "@web3auth/modal": "6.1.4",
+    "@web3auth/no-modal": "6.1.4",
+    "@web3auth/openlogin-adapter": "6.1.4",
+    "@web3auth/solana-provider": "6.1.4",
+    "@web3auth/wallet-connect-v2-adapter": "6.1.7",
+    "@zerodev/web3auth": "4.0.2",
+    "@zerodevapp/sdk": "3.1.53",
+    "alchemy-sdk": "2.9.2",
+    "axios": "1.4.0",
+    "bignumber.js": "9.1.1",
+    "chainrunner-sdk": "1.0.4",
+    "crypto": "1.0.1",
+    "crypto-browserify": "3.12.0",
+    "eth-sig-util": "3.0.1",
+    "ethers": "5.7.2",
+    "flowbite": "1.6.5",
+    "flowbite-react": "0.4.3",
+    "fs": "0.0.1-security",
+    "nanoid": "4.0.2",
+    "react": "^18.2.0",
+    "react-copy-to-clipboard": "5.1.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "8.0.5",
+    "react-router-dom": "6.10.0",
+    "react-scripts": "5.0.1",
+    "redux": "4.2.1",
+    "redux-thunk": "2.4.2",
+    "styled-components": "5.3.9",
+    "sweetalert2": "11.7.5",
+    "url": "0.11.1",
+    "userop": "0.3.1",
+    "wagmi": "1.3.10",
+    "web-vitals": "^2.1.0",
+    "web3": "1.10.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.14",
+    "babel-plugin-react-html-attrs": "3.0.5",
+    "buffer": "6.0.3",
+    "postcss": "8.4.21",
+    "process": "0.11.10",
+    "react-app-rewired": "2.2.1",
+    "tailwindcss": "3.3.1"
+  },
+  "proxy": "http://127.0.0.1:8000"
+}
