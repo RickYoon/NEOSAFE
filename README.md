@@ -1,21 +1,32 @@
-# ethcon korea 2023
+### Background: The Need for Improving Web3 User Experience
 
-## The problem Linkrypto solves
-In 2023, a series of incidents in South Korea involving centralized finance (CeFi) deposit services, managing funds exceeding 3 billion dollar, led to a significant shift in regulations. These events are anticipated to render CeFi deposit services legally unfeasible. Consequently, individuals seeking to deposit funds face a dilemma. They are compelled to interact directly with decentralized finance (DeFi) platforms, as an alternative solution. However, DeFi, while promising, presents formidable barriers for novice investors and carries inherent risks.
+<br>
+In the web3 ecosystem, there is a pressing need to enhance the user experience when it comes to service authentication and key management. Cumbersome service authentication reduces user onboarding rates, and failures in key management can lead to the loss of assets. <br><br>To address this issue, we can draw inspiration from the experiences of web2. In web2, we conveniently access services using our existing authentication methods. Even if it is inconvenient when making payments and financial transactions, we use additional authentication methods to complete the transactions.
+<br><br>
+Recently, other blockchain networks have successfully applied this customer experience to web3, yielding tangible results. For instance, by implementing social logins, web3auth has increased user onboarding rates by 35% compared to conventional methods. Additionally, multi-signature wallets with 2FA have already attracted deposits totaling 52 billion dollars.
+<br><br>
 
-To address this challenge, we have leveraged ERC-4337 technology to develop a user-friendly and secure solution. With our innovative platform, users no longer need to entrust their valuable assets to third parties. Instead, they gain the ability to invest directly, safely, and effectively. Our product aims to empower individuals to manage their investments independently, safeguarding their assets while simplifying the investment process.
+### The Problem We Aim to Solve
 
-## Challenges I ran into
-ERC-4337
-To Enhance user security and flexibility within the ERC-4337 framework, it was essential to allow for the dynamic alteration of smart wallet contracts. However, I am relatively new to ERC-4337 and have time-constrained. Consequently, I sought inspiration from existing contracts such as Kernel, Simple, and Soulwallet.
+<br>
+Based on these insights, we have assessed the current state of the NEO ecosystem. An analysis of the most recent 1,000 transactions revealed the absence of multi-signature transactions. Furthermore, from a user perspective, there is currently a lack of infrastructure to utilize smart wallet features. Drawing from examples on other chains, it's evident that features like multi-signature functionality and account abstraction are in high demand from users, making them essential components of the blockchain ecosystem.
+<br><br>
 
-MPC (Multi-Party Computation)
-Initially, I lacked a fundamental understanding of MPC technology, which required some dedicated learning. Due to time constraints, my focus shifted from comprehension to prioritizing practical implementation.
+### Our Proposed Solution
 
-Metamask Snap
-In the early stages, there was a scarcity of documentation and resources. To overcome this hurdle, I leveraged the well-crafted services of Tenderly as a foundation, thus effectively addressing the issue.
+<br>
 
-## deployed contract
+To address this issue, we intend to offer a wallet service that supports account abstraction and multi-signature functionality. Through this approach, users can seamlessly onboard to services, and they can also manage their assets more securely, using dual authentication methods to mitigate the risk of asset loss in case of key management failures.
+<br><br>
 
-Deployed smart-Account (Demo) : 0x3062698B3180fEAA7AD5aD1E850A3F498BdDDD3f (ETH - goeril)
-SmartContract : Stack-sdk (https://github.com/eth-infinitism/account-abstraction)
+### Key Features
+
+**MPC with Social Auth Wallet**
+<br>This wallet relies on Multi-Party Computation (MPC) for enhanced security and privacy, ensuring that users have full control over their assets without the need for a custodial service.
+<br>
+**Configurable Multi-Signature**
+<br>
+Users have the flexibility to configure multi-signature settings according to their specific needs, allowing for customizable security measures and control over transactions.
+<br>
+**Web-Based Wallet with No Installation**
+<br> Our wallet is accessible directly through a web browser, eliminating the need for any installation or downloads, providing users with a hassle-free and convenient experience.
