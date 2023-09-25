@@ -21,8 +21,9 @@ import { initWalletConnect, signClient } from 'utils/WalletConnectUtil'
 import { formatJsonRpcError, formatJsonRpcResult } from '@json-rpc-tools/utils'
 
 
-function WalletManager() {
 
+
+function WalletManager() {
   const dispatch = useDispatch();
 
   const [initstate, setInitstate] = useState(false)
@@ -43,6 +44,7 @@ function WalletManager() {
         setIsloading(true)
 
         const web3auth = new Web3Auth({
+            clientId: "BODWZ6bS1HF4cxbj98vCyrqGNZbx2xh9tO4PC9kq7pV7p6mEkLWmA5VzCYYtt5okZ_5_xUzgbE26r1rhD9j_xLs",
             chainConfig: {
               chainNamespace: CHAIN_NAMESPACES.EIP155,
               chainId: "0x5",

@@ -95,13 +95,13 @@ function Landing() {
             <img src={securityImage} alt="Multichain Logo" />
         </div>
     </section>
-    <section class="bg-white pt-10 pb-10">
+    <section class="bg-white pt-10 pb-20" style={{paddingBottom:"100px"}}>
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img src={multichainImage} alt="Multichain Logo" />
+            <img src={multichainImage} alt="Multichain Logo" style={{width:"450px", marginLeft:"50px"}} />
             <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Manage in one place</h2>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">No more Install wallets</h2>
                 <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-                    We help you easily track and manage assets invested in various protocols
+                    We provide a web-based wallet,<br/>eliminating the need for users to install a wallet.
                 </p>
             </div>
         </div>
