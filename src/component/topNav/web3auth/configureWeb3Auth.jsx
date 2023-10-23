@@ -41,7 +41,7 @@ const configureWeb3Auth = async () => {
       loginGridCol: 3,
       primaryButton: "externalLogin", // "externalLogin" | "socialLogin" | "emailLogin"
     },
-    web3AuthNetwork: "cyan",
+    web3AuthNetwork: "testnet",
   });
 
   const openloginAdapter = new OpenloginAdapter({
@@ -100,7 +100,7 @@ const configureWeb3Auth = async () => {
   const metamaskAdapter = new MetamaskAdapter({
     clientId : "BODWZ6bS1HF4cxbj98vCyrqGNZbx2xh9tO4PC9kq7pV7p6mEkLWmA5VzCYYtt5okZ_5_xUzgbE26r1rhD9j_xLs",
     sessionTime: 3600, // 1 hour in seconds
-    web3AuthNetwork: "cyan",
+    web3AuthNetwork: "testnet",
     chainConfig: {
       chainNamespace: CHAIN_NAMESPACES.EIP155,
       chainId: "0x5",
@@ -115,7 +115,7 @@ const configureWeb3Auth = async () => {
       chainId: "0x5",
       rpcTarget: "https://rpc.ankr.com/eth_goerli", // This is the public RPC we have added, please pass on your own endpoint while creating an app
     },
-    web3AuthNetwork: "cyan",
+    web3AuthNetwork: "testnet",
   });
 
   web3auth.configureAdapter(metamaskAdapter);
