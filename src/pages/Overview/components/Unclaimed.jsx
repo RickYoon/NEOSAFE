@@ -1,5 +1,5 @@
 import React from 'react';
-import { claimGas } from '../util/ClaimGasToken';
+// import { claimGas } from '../util/ClaimGasToken';
 
 
 function Unclaimed(props) {
@@ -56,7 +56,7 @@ function Unclaimed(props) {
 
                 <td className="p-2" style={{ textAlign: "center" }}>
                   <button class="items-center p-1 text-white font-bold text-gray-900 rounded-lg bg-primary-600 hover:bg-primary-600 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                    <div onClick={claimGas} style={{textAlign:"center"}}>Claim Gas</div>
+                    {/* <div onClick={claimGas} style={{textAlign:"center"}}>Claim Gas</div> */}
                   </button>
                 </td>
             </tr>

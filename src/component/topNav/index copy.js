@@ -22,6 +22,7 @@ import {connectAddress,
 import Example from './subComponent/DropdownProfile';
 import configureWeb3Auth from './web3auth/configureWeb3Auth';
 import RPC from "./web3RPC.ts";
+import { wallet, u, sc } from "@cityofzion/neon-js"
 import ChainSelector from "./subComponent/ChainSelector"
 
 import {
@@ -29,8 +30,6 @@ import {
   SafeEventEmitterProvider,
   WALLET_ADAPTERS,
 } from "@web3auth/base";
-
-const { wallet, u, sc } = require("@cityofzion/neon-js")
 
 function Topnav () {
 
@@ -74,25 +73,21 @@ function Topnav () {
         
         const web3auth = await configureWeb3Auth();
 
-        await web3auth.initModal();
+        await web3auth.init();
 
-        const web3authProvider = await web3auth.connect()
+        let web3authProvider = {}
 
-
-        // let web3authProvider = {}
-
-        // if(web3auth.connected){
-        //   web3authProvider = web3auth.provider
-        //   setIsLogined(true)
-        // } else {
-        //   web3authProvider = await web3auth.connectTo(
-        //     WALLET_ADAPTERS.OPENLOGIN,
-        //     {
-        //       loginProvider: "google",
-        //     }
-        //   );
-        // }
-        
+        if(web3auth.connected){
+          web3authProvider = web3auth.provider
+          setIsLogined(true)
+        } else {
+          web3authProvider = await web3auth.connectTo(
+            WALLET_ADAPTERS.OPENLOGIN,
+            {
+              loginProvider: "google",
+            }
+          );
+        }
 
         const rpc = new RPC(web3authProvider);
         const address = await rpc.getAccounts();
@@ -105,19 +100,19 @@ function Topnav () {
         localStorage.setItem("LoginInfo", JSON.stringify(user))
 
         if(chainProvider === "NEO-N3-MAIN" || chainProvider === "NEO-N3-TEST"){
-          // for Neo Chain
+          //for Neo Chain
           const neoWallet = new wallet.Account(privateKey)
-          console.log("neoWallet",neoWallet)
+          // console.log("neoWallet",neoWallet)
           dispatch(connectAddress(neoWallet._address))
           dispatch(connectBaseAddress(neoWallet._address))
           dispatch(connectPublickey(neoWallet._publicKey))
 
-          // localStorage.setItem("lastLoginAccount", neoWallet._address)
-          // const lastObject = JSON.parse(localStorage.getItem("lastSelectAccount"))
+          localStorage.setItem("lastLoginAccount", neoWallet._address)
+          const lastObject = JSON.parse(localStorage.getItem("lastSelectAccount"))
 
-          // if(lastObject.baseAddress === neoWallet._address) {
-          //   dispatch(connectAddress(lastObject.selectedAddress))
-          // }
+          if(lastObject.baseAddress === neoWallet._address) {
+            dispatch(connectAddress(lastObject.selectedAddress))
+          }
 
         } else {
 
