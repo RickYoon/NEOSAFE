@@ -90,7 +90,7 @@ function Overview() {
     let rpcURL = ""
 
     if(chainProvider === "NEO-N3-TEST"){
-      rpcURL="http://seed3t4.neo.org:20332"
+      rpcURL="https://testnet1.neo.coz.io:443"
     } else if (chainProvider === "NEO-N3-MAIN") {
       rpcURL="http://seed3.neo.org:10332"
     }
@@ -98,7 +98,7 @@ function Overview() {
     // http://seed3.neo.org:10332
 
 
-    console.log("rpcURL",rpcURL)
+    // console.log("rpcURL",rpcURL)
     const client = new rpc.RPCClient(rpcURL);
     
     try {  
