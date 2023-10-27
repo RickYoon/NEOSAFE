@@ -1,25 +1,28 @@
+import { rpc } from "@cityofzion/neon-js"
 import React, {useState, useEffect, useCallback} from "react";
 import WalletStatus from './components/WalletStatus';
 import WalletInout from './components/WalletInout';
 import axios from 'axios'
 
-import Unclaimed from './components/Unclaimed';
+// import Unclaimed from './components/Unclaimed';
 // import Trade from './components/swap'
 
 // Unclaimed
 // import { sendNeoToken } from './util/createMultiSigTransferMy';
-import { invokeContract } from './util/createManualInvoke';
-import { rpc } from '@cityofzion/neon-js'
+// import { invokeContract } from './util/createManualInvoke';
 import { useDispatch , useSelector } from 'react-redux';
-import { TurnkeySigner } from "@turnkey/ethers"
-import { ethers } from "ethers";
-import { TurnkeyClient } from "@turnkey/http";
-import { ApiKeyStamper } from "@turnkey/api-key-stamper";
-import { startRegistration, startAuthentication } from "@simplewebauthn/browser";
+// import { TurnkeySigner } from "@turnkey/ethers"
+// import { ethers } from "ethers";
+// import { TurnkeyClient } from "@turnkey/http";
+// import { ApiKeyStamper } from "@turnkey/api-key-stamper";
+// import { startRegistration, startAuthentication } from "@simplewebauthn/browser";
 
-import SelectSignerModal from "./components/Modals/SelectSigners";
+// import SelectSignerModal from "./components/Modals/SelectSigners";
 // import ReviewTransactionModal from "./components/Modals/ReviewTransaction" 
-import UnClaimedGas from "../../utils/getUnclaimedGas.js"
+// import UnClaimedGas from "../../utils/getUnclaimedGas.js"
+
+// const { rpc } = require('@cityofzion/neon-js');
+
 
 function Overview() {
 
@@ -29,7 +32,7 @@ function Overview() {
   const [selmode, setSelmode] = useState("balance")
 
   const [price, setPrice] = useState({ NEO: 0, GAS: 0 });
-  const [unclaimedGas, setUnclaimedGas] = useState("0");
+  // const [unclaimedGas, setUnclaimedGas] = useState("0");
   const [sendStatus, setSendStatus] = useState({
     "symbol": "",
     "maxAmount": 0
@@ -100,12 +103,12 @@ function Overview() {
     
     try {  
         const blockCount = await client.getNep17Balances(userAccount);
-        console.log("blockCount",blockCount)
+        // console.log("blockCount",blockCount)
         setWalletBalance(blockCount)
 
-        const ucGas = await getUnclaimedGas(userAccount,rpcURL);
-        console.log("ucGas",ucGas)
-        setUnclaimedGas(ucGas)
+        // const ucGas = await getUnclaimedGas(userAccount,rpcURL);
+        // console.log("ucGas",ucGas)
+        // setUnclaimedGas(ucGas)
         setIsloading(false)
 
         await updateHistory()
@@ -129,8 +132,8 @@ function Overview() {
   }
 
   async function getUnclaimedGas(address,rpcURL){
-    const unClaimedGas = await UnClaimedGas(address,rpcURL)
-    return unClaimedGas.total
+    // const unClaimedGas = await UnClaimedGas(address,rpcURL)
+    // return unClaimedGas.total
     // console.log("unClaimedGas",unClaimedGas)
   }
 
@@ -138,19 +141,19 @@ function Overview() {
   async function fetchPrices() {
     try {
       // API 호출
-      const response = await fetch(
-        "https://min-api.cryptocompare.com/data/pricemulti?fsyms=NEO,GAS&tsyms=USD"
-      );
+      // const response = await fetch(
+      //   "https://min-api.cryptocompare.com/data/pricemulti?fsyms=NEO,GAS&tsyms=USD"
+      // );
 
       // JSON 데이터 추출
-      const data = await response.json();
+      // const data = await response.json();
 
       // console.log("data.NEO.USD",data.NEO.USD)
 
       // 데이터에서 NEO 및 GAS 가격을 추출하여 상태 변수에 설정
       setPrice({
-        NEO: data.NEO.USD,
-        GAS: data.GAS.USD,
+        NEO: 8.17,
+        GAS: 3.12
       });
 
 
@@ -352,18 +355,18 @@ function Overview() {
       <>
         <WalletStatus isLoading={isLoading} walletBalance={walletBalance} priceList={price} makeSendModal={makeSendModal} />
         <div style={{height:"30px"}}/>
-        <Unclaimed unclaimedGas={unclaimedGas}/>
+        {/* <Unclaimed unclaimedGas={unclaimedGas}/> */}
       </>
       :
       <WalletInout isLoading={isLoading} history={history} walletBalance={walletBalance} priceList={price} makeSendModal={makeSendModal} />
       }
 
-      <SelectSignerModal
+      {/* <SelectSignerModal
         isModalOpen={isModalOpen}
         handleModal={handleModal}
         sendStatus={sendStatus}
         openReviewModal={openReviewModal}
-      />
+      /> */}
 
       {/* <ReviewTransactionModal
         isReviewModalOpen={isReviewModalOpen}

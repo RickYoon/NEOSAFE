@@ -1,3 +1,5 @@
+import { CONST, tx, rpc, sc, u, wallet} from "@cityofzion/neon-js"
+
 import React, {useState, useEffect} from 'react';
 import Styled, { keyframes } from 'styled-components';
 import Swal from 'sweetalert2'
@@ -6,9 +8,6 @@ import { useDispatch , useSelector } from 'react-redux';
 import axios from 'axios';
 import configureWeb3Auth from 'component/topNav/web3auth/configureWeb3Auth';
 import RPC from "./web3RPC.ts";
-
-const { CONST, tx, rpc, sc, u, wallet } = require("@cityofzion/neon-js")
-
 
 
 function SelectSignerModal({ isModalOpen, handleModal, sendStatus}) {
